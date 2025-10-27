@@ -1,0 +1,714 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "form_number": "1040",
+    "form_name": "U.S. Individual Income Tax Return",
+    "tax_year": 2024,
+    "form_version": "1.0",
+    "page_dimensions": {
+      "1": {
+        "width": 612,
+        "height": 792
+      },
+      "2": {
+        "width": 612,
+        "height": 792
+      }
+    },
+    "pdf_template_url": "https://www.irs.gov/pub/irs-pdf/f1040.pdf"
+  },
+  "fields": [
+    {
+      "field_id": "1040_first_name",
+      "field_name": "First Name",
+      "field_type": "text",
+      "position": {
+        "x": 50,
+        "y": 150,
+        "coordinate_system": "absolute"
+      },
+      "dimensions": {
+        "width": 200,
+        "height": 20
+      },
+      "value_reference": {
+        "path": "taxpayer.name.first",
+        "default_value": null
+      },
+      "alignment": "left",
+      "font_style": {
+        "font_family": "Courier",
+        "font_size": 10,
+        "bold": false,
+        "italic": false,
+        "color": "#000000"
+      },
+      "max_length": 30,
+      "formatting": null,
+      "validation": [
+        {
+          "rule_type": "required",
+          "parameters": {},
+          "error_message": "First name is required"
+        },
+        {
+          "rule_type": "length",
+          "parameters": {
+            "min_length": 1,
+            "max_length": 30
+          },
+          "error_message": "First name must be 1-30 characters"
+        }
+      ],
+      "overflow_behavior": "truncate",
+      "character_spacing": null,
+      "padding": {
+        "top": 0,
+        "right": 2,
+        "bottom": 0,
+        "left": 2
+      },
+      "page_number": 1,
+      "required": true,
+      "description": "Taxpayer's legal first name",
+      "irs_line_reference": "Line 1a"
+    },
+    {
+      "field_id": "1040_last_name",
+      "field_name": "Last Name",
+      "field_type": "text",
+      "position": {
+        "x": 260,
+        "y": 150,
+        "coordinate_system": "absolute"
+      },
+      "dimensions": {
+        "width": 200,
+        "height": 20
+      },
+      "value_reference": {
+        "path": "taxpayer.name.last",
+        "default_value": null
+      },
+      "alignment": "left",
+      "font_style": {
+        "font_family": "Courier",
+        "font_size": 10,
+        "bold": false,
+        "italic": false,
+        "color": "#000000"
+      },
+      "max_length": 30,
+      "formatting": null,
+      "validation": [
+        {
+          "rule_type": "required",
+          "parameters": {},
+          "error_message": "Last name is required"
+        }
+      ],
+      "overflow_behavior": "truncate",
+      "character_spacing": null,
+      "padding": {
+        "top": 0,
+        "right": 2,
+        "bottom": 0,
+        "left": 2
+      },
+      "page_number": 1,
+      "required": true,
+      "description": "Taxpayer's legal last name",
+      "irs_line_reference": "Line 1a"
+    },
+    {
+      "field_id": "1040_ssn",
+      "field_name": "Social Security Number",
+      "field_type": "ssn",
+      "position": {
+        "x": 470,
+        "y": 150,
+        "coordinate_system": "absolute"
+      },
+      "dimensions": {
+        "width": 120,
+        "height": 20
+      },
+      "value_reference": {
+        "path": "taxpayer.ssn",
+        "default_value": null
+      },
+      "alignment": "center",
+      "font_style": {
+        "font_family": "Courier",
+        "font_size": 10,
+        "bold": false,
+        "italic": false,
+        "color": "#000000"
+      },
+      "max_length": 11,
+      "formatting": {
+        "format_type": "mask",
+        "parameters": {
+          "pattern": "XXX-XX-####"
+        }
+      },
+      "validation": [
+        {
+          "rule_type": "regex",
+          "parameters": {
+            "pattern": "^\\d{3}-\\d{2}-\\d{4}$"
+          },
+          "error_message": "SSN must be in format XXX-XX-XXXX"
+        },
+        {
+          "rule_type": "required",
+          "parameters": {},
+          "error_message": "SSN is required"
+        }
+      ],
+      "overflow_behavior": "error",
+      "character_spacing": 8.5,
+      "padding": {
+        "top": 1,
+        "right": 1,
+        "bottom": 1,
+        "left": 1
+      },
+      "page_number": 1,
+      "required": true,
+      "description": "Taxpayer's Social Security Number",
+      "irs_line_reference": "SSN"
+    },
+    {
+      "field_id": "1040_address_street",
+      "field_name": "Street Address",
+      "field_type": "text",
+      "position": {
+        "x": 50,
+        "y": 180,
+        "coordinate_system": "absolute"
+      },
+      "dimensions": {
+        "width": 400,
+        "height": 20
+      },
+      "value_reference": {
+        "path": "taxpayer.address.street",
+        "default_value": null
+      },
+      "alignment": "left",
+      "font_style": {
+        "font_family": "Courier",
+        "font_size": 10,
+        "bold": false,
+        "italic": false,
+        "color": "#000000"
+      },
+      "max_length": 60,
+      "formatting": null,
+      "validation": [
+        {
+          "rule_type": "required",
+          "parameters": {},
+          "error_message": "Street address is required"
+        }
+      ],
+      "overflow_behavior": "truncate",
+      "character_spacing": null,
+      "padding": {
+        "top": 0,
+        "right": 2,
+        "bottom": 0,
+        "left": 2
+      },
+      "page_number": 1,
+      "required": true,
+      "description": "Taxpayer's street address",
+      "irs_line_reference": "Address"
+    },
+    {
+      "field_id": "1040_filing_status_single",
+      "field_name": "Filing Status - Single",
+      "field_type": "checkbox",
+      "position": {
+        "x": 50,
+        "y": 250,
+        "coordinate_system": "absolute"
+      },
+      "dimensions": {
+        "width": 12,
+        "height": 12
+      },
+      "value_reference": {
+        "path": "filing_status.is_single",
+        "default_value": "false"
+      },
+      "alignment": "center",
+      "font_style": {
+        "font_family": "Courier",
+        "font_size": 12,
+        "bold": true,
+        "italic": false,
+        "color": "#000000"
+      },
+      "max_length": null,
+      "formatting": {
+        "format_type": "checkbox",
+        "parameters": {
+          "checked_symbol": "X",
+          "unchecked_symbol": ""
+        }
+      },
+      "validation": [],
+      "overflow_behavior": "truncate",
+      "character_spacing": null,
+      "padding": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "page_number": 1,
+      "required": false,
+      "description": "Check if filing status is Single",
+      "irs_line_reference": "Filing Status"
+    },
+    {
+      "field_id": "1040_filing_status_married_joint",
+      "field_name": "Filing Status - Married Filing Jointly",
+      "field_type": "checkbox",
+      "position": {
+        "x": 50,
+        "y": 270,
+        "coordinate_system": "absolute"
+      },
+      "dimensions": {
+        "width": 12,
+        "height": 12
+      },
+      "value_reference": {
+        "path": "filing_status.is_married_filing_jointly",
+        "default_value": "false"
+      },
+      "alignment": "center",
+      "font_style": {
+        "font_family": "Courier",
+        "font_size": 12,
+        "bold": true,
+        "italic": false,
+        "color": "#000000"
+      },
+      "max_length": null,
+      "formatting": {
+        "format_type": "checkbox",
+        "parameters": {
+          "checked_symbol": "X",
+          "unchecked_symbol": ""
+        }
+      },
+      "validation": [],
+      "overflow_behavior": "truncate",
+      "character_spacing": null,
+      "padding": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "page_number": 1,
+      "required": false,
+      "description": "Check if filing status is Married Filing Jointly",
+      "irs_line_reference": "Filing Status"
+    },
+    {
+      "field_id": "1040_spouse_ssn",
+      "field_name": "Spouse's SSN",
+      "field_type": "ssn",
+      "position": {
+        "x": 470,
+        "y": 175,
+        "coordinate_system": "absolute"
+      },
+      "dimensions": {
+        "width": 120,
+        "height": 20
+      },
+      "value_reference": {
+        "path": "spouse.ssn",
+        "default_value": null
+      },
+      "alignment": "center",
+      "font_style": {
+        "font_family": "Courier",
+        "font_size": 10,
+        "bold": false,
+        "italic": false,
+        "color": "#000000"
+      },
+      "max_length": 11,
+      "formatting": {
+        "format_type": "mask",
+        "parameters": {
+          "pattern": "XXX-XX-####"
+        }
+      },
+      "validation": [
+        {
+          "rule_type": "regex",
+          "parameters": {
+            "pattern": "^\\d{3}-\\d{2}-\\d{4}$"
+          },
+          "error_message": "SSN must be in format XXX-XX-XXXX"
+        }
+      ],
+      "overflow_behavior": "error",
+      "character_spacing": 8.5,
+      "padding": {
+        "top": 1,
+        "right": 1,
+        "bottom": 1,
+        "left": 1
+      },
+      "page_number": 1,
+      "required": false,
+      "description": "Spouse's Social Security Number (if married filing jointly)",
+      "irs_line_reference": "Spouse SSN"
+    },
+    {
+      "field_id": "1040_line1_wages",
+      "field_name": "Wages, salaries, tips",
+      "field_type": "currency",
+      "position": {
+        "x": 480,
+        "y": 350,
+        "coordinate_system": "absolute"
+      },
+      "dimensions": {
+        "width": 110,
+        "height": 18
+      },
+      "value_reference": {
+        "path": "income.wages.total",
+        "default_value": "0.00"
+      },
+      "alignment": "right",
+      "font_style": {
+        "font_family": "Courier",
+        "font_size": 10,
+        "bold": false,
+        "italic": false,
+        "color": "#000000"
+      },
+      "max_length": 15,
+      "formatting": {
+        "format_type": "currency",
+        "parameters": {
+          "decimal_places": 2,
+          "show_cents": true,
+          "currency_symbol": "",
+          "thousands_separator": ",",
+          "negative_format": "parentheses"
+        }
+      },
+      "validation": [
+        {
+          "rule_type": "range",
+          "parameters": {
+            "min": 0,
+            "max": 999999999.99
+          },
+          "error_message": "Amount must be between 0 and 999,999,999.99"
+        }
+      ],
+      "overflow_behavior": "shrink",
+      "character_spacing": null,
+      "padding": {
+        "top": 2,
+        "right": 3,
+        "bottom": 2,
+        "left": 2
+      },
+      "page_number": 1,
+      "required": true,
+      "description": "Total wages from all W-2 forms",
+      "irs_line_reference": "Line 1a"
+    },
+    {
+      "field_id": "1040_line2a_tax_exempt_interest",
+      "field_name": "Tax-exempt interest",
+      "field_type": "currency",
+      "position": {
+        "x": 480,
+        "y": 370,
+        "coordinate_system": "absolute"
+      },
+      "dimensions": {
+        "width": 110,
+        "height": 18
+      },
+      "value_reference": {
+        "path": "income.interest.tax_exempt",
+        "default_value": "0.00"
+      },
+      "alignment": "right",
+      "font_style": {
+        "font_family": "Courier",
+        "font_size": 10,
+        "bold": false,
+        "italic": false,
+        "color": "#000000"
+      },
+      "max_length": 15,
+      "formatting": {
+        "format_type": "currency",
+        "parameters": {
+          "decimal_places": 2,
+          "show_cents": true,
+          "currency_symbol": "",
+          "thousands_separator": ",",
+          "negative_format": "parentheses"
+        }
+      },
+      "validation": [
+        {
+          "rule_type": "range",
+          "parameters": {
+            "min": 0,
+            "max": 999999999.99
+          },
+          "error_message": "Amount must be between 0 and 999,999,999.99"
+        }
+      ],
+      "overflow_behavior": "shrink",
+      "character_spacing": null,
+      "padding": {
+        "top": 2,
+        "right": 3,
+        "bottom": 2,
+        "left": 2
+      },
+      "page_number": 1,
+      "required": false,
+      "description": "Tax-exempt interest income",
+      "irs_line_reference": "Line 2a"
+    },
+    {
+      "field_id": "1040_line2b_taxable_interest",
+      "field_name": "Taxable interest",
+      "field_type": "currency",
+      "position": {
+        "x": 480,
+        "y": 390,
+        "coordinate_system": "absolute"
+      },
+      "dimensions": {
+        "width": 110,
+        "height": 18
+      },
+      "value_reference": {
+        "path": "income.interest.taxable",
+        "default_value": "0.00"
+      },
+      "alignment": "right",
+      "font_style": {
+        "font_family": "Courier",
+        "font_size": 10,
+        "bold": false,
+        "italic": false,
+        "color": "#000000"
+      },
+      "max_length": 15,
+      "formatting": {
+        "format_type": "currency",
+        "parameters": {
+          "decimal_places": 2,
+          "show_cents": true,
+          "currency_symbol": "",
+          "thousands_separator": ",",
+          "negative_format": "parentheses"
+        }
+      },
+      "validation": [
+        {
+          "rule_type": "range",
+          "parameters": {
+            "min": 0,
+            "max": 999999999.99
+          },
+          "error_message": "Amount must be between 0 and 999,999,999.99"
+        }
+      ],
+      "overflow_behavior": "shrink",
+      "character_spacing": null,
+      "padding": {
+        "top": 2,
+        "right": 3,
+        "bottom": 2,
+        "left": 2
+      },
+      "page_number": 1,
+      "required": false,
+      "description": "Taxable interest income",
+      "irs_line_reference": "Line 2b"
+    },
+    {
+      "field_id": "1040_standard_deduction",
+      "field_name": "Standard Deduction",
+      "field_type": "currency",
+      "position": {
+        "x": 480,
+        "y": 500,
+        "coordinate_system": "absolute"
+      },
+      "dimensions": {
+        "width": 110,
+        "height": 18
+      },
+      "value_reference": {
+        "path": "deductions.standard",
+        "default_value": "0.00"
+      },
+      "alignment": "right",
+      "font_style": {
+        "font_family": "Courier",
+        "font_size": 10,
+        "bold": false,
+        "italic": false,
+        "color": "#000000"
+      },
+      "max_length": 15,
+      "formatting": {
+        "format_type": "currency",
+        "parameters": {
+          "decimal_places": 2,
+          "show_cents": true,
+          "currency_symbol": "",
+          "thousands_separator": ",",
+          "negative_format": "parentheses"
+        }
+      },
+      "validation": [
+        {
+          "rule_type": "range",
+          "parameters": {
+            "min": 0,
+            "max": 999999999.99
+          },
+          "error_message": "Amount must be between 0 and 999,999,999.99"
+        }
+      ],
+      "overflow_behavior": "shrink",
+      "character_spacing": null,
+      "padding": {
+        "top": 2,
+        "right": 3,
+        "bottom": 2,
+        "left": 2
+      },
+      "page_number": 1,
+      "required": true,
+      "description": "Standard deduction amount",
+      "irs_line_reference": "Line 12"
+    },
+    {
+      "field_id": "1040_signature_taxpayer",
+      "field_name": "Taxpayer Signature",
+      "field_type": "signature",
+      "position": {
+        "x": 50,
+        "y": 700,
+        "coordinate_system": "absolute"
+      },
+      "dimensions": {
+        "width": 200,
+        "height": 30
+      },
+      "value_reference": {
+        "path": "signatures.taxpayer",
+        "default_value": null
+      },
+      "alignment": "left",
+      "font_style": {
+        "font_family": "Courier",
+        "font_size": 10,
+        "bold": false,
+        "italic": true,
+        "color": "#000000"
+      },
+      "max_length": 50,
+      "formatting": null,
+      "validation": [
+        {
+          "rule_type": "required",
+          "parameters": {},
+          "error_message": "Taxpayer signature is required"
+        }
+      ],
+      "overflow_behavior": "truncate",
+      "character_spacing": null,
+      "padding": {
+        "top": 5,
+        "right": 2,
+        "bottom": 5,
+        "left": 2
+      },
+      "page_number": 1,
+      "required": true,
+      "description": "Taxpayer's signature",
+      "irs_line_reference": "Signature"
+    },
+    {
+      "field_id": "1040_signature_date",
+      "field_name": "Date Signed",
+      "field_type": "date",
+      "position": {
+        "x": 260,
+        "y": 700,
+        "coordinate_system": "absolute"
+      },
+      "dimensions": {
+        "width": 100,
+        "height": 30
+      },
+      "value_reference": {
+        "path": "signatures.date",
+        "default_value": null
+      },
+      "alignment": "center",
+      "font_style": {
+        "font_family": "Courier",
+        "font_size": 10,
+        "bold": false,
+        "italic": false,
+        "color": "#000000"
+      },
+      "max_length": 10,
+      "formatting": {
+        "format_type": "date",
+        "parameters": {
+          "format": "MM/DD/YYYY",
+          "input_format": "ISO8601"
+        }
+      },
+      "validation": [
+        {
+          "rule_type": "required",
+          "parameters": {},
+          "error_message": "Signature date is required"
+        }
+      ],
+      "overflow_behavior": "truncate",
+      "character_spacing": null,
+      "padding": {
+        "top": 5,
+        "right": 2,
+        "bottom": 5,
+        "left": 2
+      },
+      "page_number": 1,
+      "required": true,
+      "description": "Date taxpayer signed the return",
+      "irs_line_reference": "Date"
+    }
+  ]
+}

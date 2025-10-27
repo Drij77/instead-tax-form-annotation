@@ -1,0 +1,52 @@
+{
+  "taxpayer": {
+    "name": {
+      "first": "John",
+      "middle": "Q",
+      "last": "Doe"
+    },
+    "ssn": "123-45-6789",
+    "address": {
+      "street": "123 Main Street",
+      "city": "Anytown",
+      "state": "CA",
+      "zip": "12345"
+    },
+    "phone": "555-123-4567",
+    "date_of_birth": "1985-06-15"
+  },
+  "spouse": {
+    "name": {
+      "first": "Jane",
+      "middle": "R",
+      "last": "Doe"
+    },
+    "ssn": "987-65-4321",
+    "date_of_birth": "1987-08-22"
+  },
+  "filing_status": {
+    "is_single": false,
+    "is_married_filing_jointly": true,
+    "is_married_filing_separately": false,
+    "is_head_of_household": false,
+    "is_qualifying_widow": false
+  },
+  "income": {
+    "wages": {
+      "total": 95000.00
+    },
+    "interest": {
+      "total": 1250.50,
+      "taxable": 1250.50,
+      "tax_exempt": 0.00
+    }
+  },
+  "deductions": {
+    "standard": 27700.00
+  },
+  "signatures": {
+    "taxpayer": "John Q Doe",
+    "spouse": "Jane R Doe",
+    "date": "2025-04-15"
+  }
+}
